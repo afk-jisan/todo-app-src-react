@@ -1,5 +1,532 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 body {
-    font-family: 'Roboto';
+  font-family: "Roboto";
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  justify-content: center;
+  background-color: #f2f3f3;
+  
+  /* background-color: #2a2a2a; */ /* for night mode */
+}
+
+
+
+
+
+
+/* Beginning of Home style */
+/* Container */
+.home-container {
+  padding-top: 50px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 60vh;
+  background-color: #f2f3f3;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Title */
+.home-title {
+  margin-top: 50px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Description */
+.home-description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #374151;
+  max-width: 450px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* Button */
+.home-button {
+  background-color: #2563eb;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.home-button:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+/* Welcome Message */
+.home-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 20px;
+  animation: fadeIn 1.5s infinite;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  .home-container {
+    width: 95%;
+    padding: 24px;
+  }
+  .home-title {
+    font-size: 2.5rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
+  .home-button {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  body {
+    background-color: #f2f3f3;
+  }
+
+  .home-container {
+    width: 100%;
+    min-height: 50vh;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 500px;
+  }
+  .home-title {
+    font-size: 2.2rem;
+  }
+  .home-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .home-button {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+ 
+  }
+
+  
+}
+
+
+
+
+
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .home-container {
+    margin-top: 0px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .home-title {
+    font-size: 1.5rem;
+  }
+  .home-description {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .home-button {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+  .home-message {
+    font-size: 1rem;
+  }
+}
+
+/* End of Home style */
+
+
+
+
+
+
+
+
+/* BEGINING OF LOGIN STYLE */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 30vw;
+  margin-top: 50px;
+
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+
+/* END OF LOGIN STYLE */
+
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+
+
+
+.stats-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.stat-box, .chart-box {
+  padding: 20px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  width: 280px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.chart-box h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* todo toggle */
+/* Container for the checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom Checkbox */
+.checkbox-container label {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: white; /* White background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-right: 10px; /* Space between checkbox and title */
+}
+
+/* When checkbox is checked */
+.checkbox-container input[type="checkbox"]:checked + label {
+  background-color: #4caf50; /* Green background */
+  border-color: #4caf50; /* Green border */
+}
+
+/* Inner Checkmark when checked */
+.checkbox-container input[type="checkbox"]:checked + label::after {
+  content: "✓"; /* Checkmark symbol */
+  font-size: 20px; /* Checkmark size */
+  color: white; /* Checkmark color */
+}
+
+/* When checkbox is hovered */
+.checkbox-container label:hover {
+  border-color: #3b9d3b; /* Darker green border on hover */
+  background-color: #e0f7e0; /* Light green background on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+.upperBtns {
+  display: flex;
+  flex-direction: row;
+}
+
+.btnLogout {
+  padding: 10px 15px;
+  border: 1px solid rgba(211, 47, 47, 1);
+  border-radius: 5px;
+  border-color: rgba(211, 47, 47, 0.5);
+  color: #d32f2f;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btnProfile {
+  padding: 10px 15px;
+  border: 1px solid rgba(46, 125, 50, 0.7); /* Greenish border */
+  border-radius: 5px;
+  color: #2e7d32; /* Green text */
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btnProfile:hover {
+  background-color: rgba(46, 125, 50, 0.1); /* Subtle hover effect */
+  border-color: rgba(46, 125, 50, 1);
+}
+
+.btnLogout:hover {
+  background-color: rgba(211, 47, 47, 0.1); /* Subtle hover effect */
+  border-color: rgba(211, 47, 47, 1);
+}
+
+
+
+
+/*Profile page */
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  min-width: 20vw;
+  padding: 0 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex: 1;
+}
+
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between each box */
+}
+
+.detail-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+}
+
+.detail-header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #333;
+}
+
+.btnEdit {
+  margin-top: 10px;
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  align-self: self-end;
+}
+
+.btnEdit:hover {
+  background-color: #2c9b32; /* Slightly darker green on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: translateY(-2px); /* Subtle "lift" effect */
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  body {
+    display: block; /* Resets flex */
+    width: 100%;
+  }
+
+  /* BEGINING OF LOGIN STYLE */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 35px;
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    padding-bottom: 50px;
+    box-shadow: none;
+    
+  }
+
+
+
+
+  .upperBtns {
+    display: flex;
+    flex-direction: column;
+  }
+  /* For tablets and phones */
+  .detailsContainer {
+    min-width: 90vw; /* Full width on smaller screens */
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    padding-left: 20px;
+    
+  }
+
+  .details {
+    gap: 8px; /* Reduced gap */
+  }
+
+  .detail-item {
+    padding: 8px; /* Reduced padding */
+  }
+
+  .btnEdit {
+    padding: 12px 12px; /* Adjusted padding */
+    font-size: 15px;
+  }
+
+  .profile-pic {
+    position: static;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  /* For small phones */
+  .detailsContainer {
+    min-width: 95vw; 
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 16px; 
+  }
+
+  .detail-item {
+    padding: 5px; 
+  }
+
+  .btnEdit {
+    padding: 12px 12px; 
+    font-size: 15px;
+  }
+}
+
+
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1300px;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  .todo-container {
+      flex-grow: 3; /* Takes most of the width */
+  }
+  .stats-container {
+      flex-grow: 1; /* Takes less width */
+  }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .dashboard-container {
+      flex-direction: column;
+  }
+  .todo-container, .stats-container {
+      flex-grow: 1;
+      width: 100%;
+  }
 }
